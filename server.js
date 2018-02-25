@@ -11,6 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //parse application/json
 app.use(bodyParser.json());
 
+// Including the html routes in the server file
+require('./app/routing/htmlRoutes.js')(app);
+
 
 app.listen(PORT, function() {
 	console.log("App is listening on PORT: " + PORT);
