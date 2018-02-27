@@ -187,23 +187,24 @@
   $("#surveySubmit").on("click", function(event) {
       event.preventDefault();
 
+      //grabbing the form elements
       var surveyData = {
-        name: $("#name").val().trim();
-        link: $("#link").val().trim();
-        one: $("#one").val().trim();
-        two: $("#two").val().trim();
-        three: $("#three").val().trim();
-        four: $("#four").val().trim();
-        five: $("#five").val().trim();
-        six: $("#six").val().trim();
-        seven: $("#seven").val().trim();
-        eight: $("#eight").val().trim();
-        nine: $("#nine").val().trim();
-        ten: $("#ten").val().trim();
+        name: $("#name").val().trim(),
+        link: $("#link").val().trim(),
+        one: $("#one").val().trim(),
+        two: $("#two").val().trim(),
+        three: $("#three").val().trim(),
+        four: $("#four").val().trim(),
+        five: $("#five").val().trim(),
+        six: $("#six").val().trim(),
+        seven: $("#seven").val().trim(),
+        eight: $("#eight").val().trim(),
+        nine: $("#nine").val().trim(),
+        ten: $("#ten").val().trim()
       };
       console.log(surveyData);
 
-  });
+  })
     
   </script>
 </html>
