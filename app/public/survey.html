@@ -182,7 +182,9 @@
     <!-- MODAL -->
     <div class="modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
+
         <div class="modal-content">
+          <!-- Header -->
           <div class="modal-header">
             <h4 class="modal-title">Congratulations! We have a match!</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -191,9 +193,10 @@
           </div>
 
           <div class="modal-body">
-            <h5>Match's name</h5>
-            <!--Picture goes here-->
+            <h5 id="BuddyName"></h5>
+            <img id="BuddyImage" src="#" alt="Image Not Found">
           </div>
+          <!-- Close Button -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
@@ -205,6 +208,11 @@
 
   <!--jQuery-->
   <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- JavaScript For the Modal -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- JavaScript -->
   <script type="text/javascript">
   $("#surveySubmit").on("click", function(event) {
       event.preventDefault();
@@ -212,21 +220,34 @@
       //grabbing the form elements
       var surveyData = {
         name: $("#name").val().trim(),
-        link: $("#link").val().trim(),
-        one: $("#one").val().trim(),
-        two: $("#two").val().trim(),
-        three: $("#three").val().trim(),
-        four: $("#four").val().trim(),
-        five: $("#five").val().trim(),
-        six: $("#six").val().trim(),
-        seven: $("#seven").val().trim(),
-        eight: $("#eight").val().trim(),
-        nine: $("#nine").val().trim(),
-        ten: $("#ten").val().trim()
+        photo: $("#link").val().trim(),
+        scores: [
+        $("#one").val().trim(),
+        $("#two").val().trim(),
+        $("#three").val().trim(),
+        $("#four").val().trim(),
+        $("#five").val().trim(),
+        $("#six").val().trim(),
+        $("#seven").val().trim(),
+        $("#eight").val().trim(),
+        $("#nine").val().trim(),
+        $("#ten").val().trim()
+        ]
       };
       console.log(surveyData);
 
-  })
+      // Current URL 
+      var currentURL = window.location.origin;
+
+      // This will post data to the API
+      $.post(currentURL + "/api/friends", surveyData, function(data) {
+        // This will grab the results from API
+        $("#BuddyName").text(data.name);
+        $("BuddyImage").attr("src", data.photo);
+
+      })
+
+  });
     
   </script>
 </html>
