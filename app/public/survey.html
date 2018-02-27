@@ -12,10 +12,11 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="card-title mb-4 mt-5">Survey Questions</h1>
-      <div class="card mb-5 p-5">
+      <h1 class="card-title mb-4 mt-5 bg-warning text-white p-4">Survey Questions:</h1>
+
+      <div class="card mb-5 p-5 bg-info text-white">
         <div class="card-body">
-          <h3 class="card-subtitle">About You</h3>
+          <h2 class="card-subtitle">About You</h2>
           <hr>
           <!-- SURVEY-->
           <form>
@@ -180,14 +181,14 @@
     </div>  <!-- DONE WITH SURVEY -->
 
     <!-- MODAL -->
-    <div class="modal" tabindex="-1" role="dialog">
+    <div id="myModal" class="modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
 
         <div class="modal-content">
           <!-- Header -->
           <div class="modal-header">
             <h4 class="modal-title">Congratulations! We have a match!</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button id="delete" type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -196,10 +197,7 @@
             <h5 id="BuddyName"></h5>
             <img id="BuddyImage" src="#" alt="Image Not Found">
           </div>
-          <!-- Close Button -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+        
         </div>
       </div>
     </div>
@@ -216,6 +214,8 @@
   <script type="text/javascript">
   $("#surveySubmit").on("click", function(event) {
       event.preventDefault();
+      //write a function that validates the form
+      // if page is validated - submit data if not then alert to fill out the fields
 
       //grabbing the form elements
       var surveyData = {
@@ -245,8 +245,24 @@
         $("#BuddyName").text(data.name);
         $("BuddyImage").attr("src", data.photo);
 
-      })
+        // Modal
+        $('#myModal').modal('show');
 
+        // Clear the form
+        $("#name").val("");
+        $("#link").val("");
+        $("#one").val("");
+        $("#two").val("");
+        $("#three").val("");
+        $("#four").val("");
+        $("#five").val("");
+        $("#six").val("");
+        $("#seven").val("");
+        $("#eight").val("");
+        $("#nine").val("");
+        $("#ten").val("");
+
+      });
   });
     
   </script>

@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 
 // Including the html routes in the server file
-require('./app/routing/apiRoutes')(app);
+// require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes.js')(app);
 
 

@@ -8,11 +8,11 @@ module.export = function(app) {
 
 
 // Post routes - will handle incoming survey results and compatibility logic
-	app.post('/api/friends', function(req, res) {
-		if() {
-			//data
-		} else {
-			//data
-		}
-	});
+	// app.post('/api/friends', function(req, res) {
+	// 	// if() {
+	// 	// 	//data
+	// 	// } else {
+	// 	// 	//data
+	// 	// }
+	// });
 }
