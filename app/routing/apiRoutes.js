@@ -15,6 +15,7 @@ module.export = function(app) {
 		var buddyMatch = {
 			name: "",
 			photo: "",
+			buddyDifference: 50
 		};
 
 		// Grap the users result from the survey
@@ -22,6 +23,7 @@ module.export = function(app) {
 		var userName = userData.name;
 		var userPhoto = userData.photo;
 		var userScores = userData.scores;
+		var difference = 0;
 
 		// Loop through all friends
 		for (f = 0; f < friends.length; f++) {
@@ -29,11 +31,20 @@ module.export = function(app) {
 
 			//loop through score
 			for (s = 0; s < friends[f].scores.length; s++) {
-				console.log(friends[f].score[s]);
-						// Difference between scores	
-						difference += Math.abs(parseInt(userScores[s] - parseInt(friends[f].scores[s]));
+				console.log(friends[f].scores[s]);
+					// Difference between scores	
+					difference += Math.abs(parseInt(userScores[s] - parseInt(friends[f].scores[s]));
 
-			}		
+					if (difference <= buddyMatch.buddyDifference) {
+						buddyMatch.name = friends[i].name;
+						buddyMatch.photo = friends[i].photo;
+						buddyMatch.buddyDifference = difference;
+				}
+			}
 		}
+		
+		friends.push(userData);
+
+		res.json(buddyMatch);
 	});
 }

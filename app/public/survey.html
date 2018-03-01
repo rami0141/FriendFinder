@@ -197,7 +197,7 @@
 
           <div class="modal-body">
             <h5 id="BuddyName"></h5>
-            <img id="BuddyImage" src="#" alt="Image Not Found">
+            <img id="BuddyImage" src="https://thetechhacker.com/wp-content/uploads/2017/01/Best-Reverse-Image-Search-Engines.jpg" alt="Image Not Found">
           </div>
         
         </div>
@@ -246,7 +246,7 @@
       $.post(currentURL + "/api/friends", surveyData, function(data) {
         // This will grab the results from API
         $("#BuddyName").text(data.name);
-        $("BuddyImage").attr("src", data.photo);
+        $("#BuddyImage").attr("src", data.photo);
 
         // Modal
         $('#showResults').modal('show');
