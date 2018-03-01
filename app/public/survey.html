@@ -183,7 +183,7 @@
     </div>  <!-- DONE WITH SURVEY -->
 
     <!-- MODAL -->
-    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+    <div id="showResults" class="modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
 
         <div class="modal-content">
@@ -245,11 +245,11 @@
       // This will post data to the API
       $.post(currentURL + "/api/friends", surveyData, function(data) {
         // This will grab the results from API
-        $("#BuddyName").text(friends.name);
-        $("BuddyImage").attr("src", friends.photo);
+        $("#BuddyName").text(data.name);
+        $("BuddyImage").attr("src", data.photo);
 
         // Modal
-        $('#myModal').modal('show');
+        $('#showResults').modal('show');
 
         // Clear the form
         $("#name").val("");

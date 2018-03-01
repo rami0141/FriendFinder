@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 
 
 // Including the html routes in the server file
-require('./app/routing/apiRoutes.js')(app);
-require('./app/routing/htmlRoutes.js')(app);
+//require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
 
 app.listen(PORT, function() {
