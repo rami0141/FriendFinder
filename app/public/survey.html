@@ -23,21 +23,12 @@
           <form>
             <div class="form-group">
               <label for="name">Name (Required)</label>
-              <input type="text" class="form-control" id="name" placeholder="John Doe" required>
-              <div class="invalid-feedback">
-                  Please provide a valid Name.
-              </div>
-
-
+              <input type="text" class="form-control" id="name" placeholder="John Doe">
             </div>
             <div class="form-group">
-              <label for="link">Link to Photo Image (Required)</label>
-              <input type="text" class="form-control mb-3" id="link" placeholder="Link Here" required>
-              <div class="invalid-feedback">
-                  Please provide a valid Link.
-              </div>
+              <label for="photo">Link to Photo Image (Required)</label>
+              <input type="text" class="form-control mb-3" id="photo" placeholder="Link Here" >             
             </div>
-
 
             <hr>
             <h2>Please Select A Number</h2>
@@ -223,6 +214,7 @@
 
   <!-- JavaScript -->
   <script type="text/javascript">
+
   $("#surveySubmit").on("click", function(event) {
       event.preventDefault();
       //write a function that validates the form
@@ -231,7 +223,7 @@
       //grabbing the form elements
       var surveyData = {
         name: $("#name").val().trim(),
-        photo: $("#link").val().trim(),
+        photo: $("#photo").val().trim(),
         scores: [
         $("#one").val().trim(),
         $("#two").val().trim(),
@@ -253,15 +245,15 @@
       // This will post data to the API
       $.post(currentURL + "/api/friends", surveyData, function(data) {
         // This will grab the results from API
-        $("#BuddyName").text(data.name);
-        $("BuddyImage").attr("src", data.photo);
+        $("#BuddyName").text(friends.name);
+        $("BuddyImage").attr("src", friends.photo);
 
         // Modal
         $('#myModal').modal('show');
 
         // Clear the form
         $("#name").val("");
-        $("#link").val("");
+        $("#photo").val("");
         $("#one").val("");
         $("#two").val("");
         $("#three").val("");
