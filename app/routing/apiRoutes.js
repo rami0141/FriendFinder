@@ -36,8 +36,8 @@ module.export = function(app) {
 					difference += Math.abs(parseInt(userScores[s] - parseInt(friends[f].scores[s]));
 
 					if (difference <= buddyMatch.buddyDifference) {
-						buddyMatch.name = friends[i].name;
-						buddyMatch.photo = friends[i].photo;
+						buddyMatch.name = friends[f].name;
+						buddyMatch.photo =  friends[f].photo;
 						buddyMatch.buddyDifference = difference;
 				}
 			}

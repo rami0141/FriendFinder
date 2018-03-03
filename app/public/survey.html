@@ -23,11 +23,12 @@
           <form>
             <div class="form-group">
               <label for="name">Name (Required)</label>
-              <input type="text" class="form-control" id="name" placeholder="John Doe">
+              <input type="text" id="name" placeholder="John Doe" class="form-control validate mb-3" required>
             </div>
+
             <div class="form-group">
-              <label for="photo">Link to Photo Image (Required)</label>
-              <input type="text" class="form-control mb-3" id="photo" placeholder="Link Here" >             
+             <label for="photo">Link to Photo Image (Required)</label>
+              <input type="text" class="form-control validate mb-3" id="photo" placeholder="Link Here" required>             
             </div>
 
             <hr>
@@ -40,7 +41,7 @@
             <div class="form-group">
               <h3>Question 1</h3>
               <label for="exampleFormControlSelect1">Your mind is always buzzing with unexplored ideas and plans.</label>
-              <select class="form-control form-control-sm" id="one">
+              <select class="form-control form-control-sm" id="one" class="drop">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -54,7 +55,7 @@
              <div class="form-group">
               <h3>Question 2</h3>
               <label for="exampleFormControlSelect1">Generally speaking, you rely more on your experience than your imagination.</label>
-              <select class="form-control form-control-sm" id="two">
+              <select class="form-control form-control-sm" id="two" class="drop">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -68,7 +69,7 @@
              <div class="form-group">
               <h3>Question 3</h3>
               <label for="exampleFormControlSelect1">You find it easy to stay relaxed and focused even when there is some pressure.</label>
-              <select class="form-control form-control-sm" id="three">
+              <select class="form-control form-control-sm" id="three" class="drop">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -82,7 +83,7 @@
              <div class="form-group">
               <h3>Question 4</h3>
               <label for="exampleFormControlSelect1">You rarely do something just out of sheer curiosity.</label>
-              <select class="form-control form-control-sm" id="four">
+              <select class="form-control form-control-sm" id="four" class="drop">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -96,7 +97,7 @@
              <div class="form-group">
               <h3>Question 5</h3>
               <label for="exampleFormControlSelect1">People can rarely upset you.</label>
-              <select class="form-control form-control-sm" id="five">
+              <select class="form-control form-control-sm" id="five" class="drop">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -110,7 +111,7 @@
              <div class="form-group">
               <h3>Question 6</h3>
               <label for="exampleFormControlSelect1">It is often difficult for you to relate to other people’s feelings.</label>
-              <select class="form-control form-control-sm" id="six">
+              <select class="form-control form-control-sm" id="six" class="drop">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -124,7 +125,7 @@
              <div class="form-group">
               <h3>Question 7</h3>
               <label for="exampleFormControlSelect1">In a discussion, truth should be more important than people’s sensitivities.</label>
-              <select class="form-control form-control-sm" id="seven">
+              <select class="form-control form-control-sm" id="seven" class="drop">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -138,7 +139,7 @@
              <div class="form-group">
               <h3>Question 8</h3>
               <label for="exampleFormControlSelect1">You rarely get carried away by fantasies and ideas.</label>
-              <select class="form-control form-control-sm" id="eight">
+              <select class="form-control form-control-sm" id="eight" class="drop">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -152,7 +153,7 @@
              <div class="form-group">
               <h3>Question 9</h3>
               <label for="exampleFormControlSelect1">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label>
-              <select class="form-control form-control-sm" id="nine">
+              <select class="form-control form-control-sm" id="nine" class="drop">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -166,7 +167,7 @@
              <div class="form-group">
               <h3>Question 10</h3>
               <label for="exampleFormControlSelect1">You feel more energetic after spending time with a group of people.</label>
-              <select class="form-control form-control-sm" id="ten">
+              <select class="form-control form-control-sm" id="ten" class="drop">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -197,7 +198,7 @@
 
           <div class="modal-body">
             <h5 id="BuddyName"></h5>
-            <img id="BuddyImage" src="https://thetechhacker.com/wp-content/uploads/2017/01/Best-Reverse-Image-Search-Engines.jpg" alt="Image Not Found">
+            <img id="BuddyImage" src="https://thetechhacker.com/wp-content/uploads/2017/01/Best-Reverse-Image-Search-Engines.jpg" style="height: 200px; width: 200px" alt="Image Not Found">
           </div>
         
         </div>
@@ -211,15 +212,31 @@
 
   <!-- JavaScript For the Modal -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
   <!-- JavaScript -->
   <script type="text/javascript">
-
-  $("#surveySubmit").on("click", function(event) {
-      event.preventDefault();
-      //write a function that validates the form
-      // if page is validated - submit data if not then alert to fill out the fields
-
+    $(document).ready(function() {
+      $("#surveySubmit").on("click", function() {
+        event.preventDefault();
+        
+        //form validation
+        function validateForm() {
+          var isValid = true;
+            $('.validate').each(function() {
+                if ($(this).val() === ''){
+                    isValid = false;
+                }
+            });
+            $('.drop').each(function() {
+                if ($(this).val() === ""){
+                    isValid = false;
+                }
+            });
+            return isValid;
+        }
+        //if everything is filled
+        if (validateForm() == true) {
       //grabbing the form elements
       var surveyData = {
         name: $("#name").val().trim(),
@@ -247,7 +264,7 @@
         // This will grab the results from API
         $("#BuddyName").text(data.name);
         $("#BuddyImage").attr("src", data.photo);
-
+      });
         // Modal
         $('#showResults').modal('show');
 
@@ -264,9 +281,13 @@
         $("#eight").val("");
         $("#nine").val("");
         $("#ten").val("");
-
+        }
+         else {
+          alert("Please fill out All fields");
+         };
       });
   });
+
     
   </script>
 </html>
