@@ -9,7 +9,7 @@ module.export = function(app) {
 
 //Post routes - will handle incoming survey results and compatibility logic
 	app.post('/api/friends', function(req, res) {
-		var user = req.body;
+		var user = req.body.scores;
 		console.log(friends.name);
 		// This is an object that will hold the Buddy results
 		var buddyMatch = {

@@ -41,7 +41,7 @@
             <div class="form-group">
               <h3>Question 1</h3>
               <label for="exampleFormControlSelect1">Your mind is always buzzing with unexplored ideas and plans.</label>
-              <select class="form-control form-control-sm" id="one" class="drop">
+              <select class="form-control form-control-sm" id="one" class="drop" data-placeholder="">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -55,7 +55,7 @@
              <div class="form-group">
               <h3>Question 2</h3>
               <label for="exampleFormControlSelect1">Generally speaking, you rely more on your experience than your imagination.</label>
-              <select class="form-control form-control-sm" id="two" class="drop">
+              <select class="form-control form-control-sm" id="two" class="drop" data-placeholder="">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -69,7 +69,7 @@
              <div class="form-group">
               <h3>Question 3</h3>
               <label for="exampleFormControlSelect1">You find it easy to stay relaxed and focused even when there is some pressure.</label>
-              <select class="form-control form-control-sm" id="three" class="drop">
+              <select class="form-control form-control-sm" id="three" class="drop" data-placeholder="">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -83,7 +83,7 @@
              <div class="form-group">
               <h3>Question 4</h3>
               <label for="exampleFormControlSelect1">You rarely do something just out of sheer curiosity.</label>
-              <select class="form-control form-control-sm" id="four" class="drop">
+              <select class="form-control form-control-sm" id="four" class="drop" data-placeholder="">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -97,7 +97,7 @@
              <div class="form-group">
               <h3>Question 5</h3>
               <label for="exampleFormControlSelect1">People can rarely upset you.</label>
-              <select class="form-control form-control-sm" id="five" class="drop">
+              <select class="form-control form-control-sm" id="five" class="drop" data-placeholder="">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -111,7 +111,7 @@
              <div class="form-group">
               <h3>Question 6</h3>
               <label for="exampleFormControlSelect1">It is often difficult for you to relate to other people’s feelings.</label>
-              <select class="form-control form-control-sm" id="six" class="drop">
+              <select class="form-control form-control-sm" id="six" class="drop" data-placeholder="">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -125,7 +125,7 @@
              <div class="form-group">
               <h3>Question 7</h3>
               <label for="exampleFormControlSelect1">In a discussion, truth should be more important than people’s sensitivities.</label>
-              <select class="form-control form-control-sm" id="seven" class="drop">
+              <select class="form-control form-control-sm" id="seven" class="drop" data-placeholder="">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -139,7 +139,7 @@
              <div class="form-group">
               <h3>Question 8</h3>
               <label for="exampleFormControlSelect1">You rarely get carried away by fantasies and ideas.</label>
-              <select class="form-control form-control-sm" id="eight" class="drop">
+              <select class="form-control form-control-sm" id="eight" class="drop" data-placeholder="">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -153,7 +153,7 @@
              <div class="form-group">
               <h3>Question 9</h3>
               <label for="exampleFormControlSelect1">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label>
-              <select class="form-control form-control-sm" id="nine" class="drop">
+              <select class="form-control form-control-sm" id="nine" class="drop" data-placeholder="">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -167,7 +167,7 @@
              <div class="form-group">
               <h3>Question 10</h3>
               <label for="exampleFormControlSelect1">You feel more energetic after spending time with a group of people.</label>
-              <select class="form-control form-control-sm" id="ten" class="drop">
+              <select class="form-control form-control-sm" id="ten" class="drop" data-placeholder="">
                 <option value="">Select an Option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -177,11 +177,13 @@
               </select>
             </div>
             <!-- Submit Button -->
-            <button type="button" id="surveySubmit" class="btn btn-danger btn-lg mt-3 mb-3">Submit</button>
+            <button type="button" data-target="showResults" id="surveySubmit" class="btn btn-danger btn-lg mt-3 mb-3">Submit</button>
           </form>
         </div>
       </div>
-    </div>  <!-- DONE WITH SURVEY -->
+
+    <a href="/api/friends">API Friends List</a> | <a href="https://github.com/rami0141/FriendFinder.git" target="_blank">GitHub Repo</a>
+     </div>  <!-- DONE WITH SURVEY -->
 
     <!-- MODAL -->
     <div id="showResults" class="modal" tabindex="-1" role="dialog">
@@ -197,13 +199,14 @@
           </div>
 
           <div class="modal-body">
-            <h5 id="BuddyName"></h5>
-            <img id="BuddyImage" src="https://thetechhacker.com/wp-content/uploads/2017/01/Best-Reverse-Image-Search-Engines.jpg" style="height: 200px; width: 200px" alt="Image Not Found">
+            <h5 id="BuddyName">Cinderella</h5>
+            <img id="BuddyImage" src="http://4.bp.blogspot.com/-5DcQEsKUVok/UyPubhot61I/AAAAAAAA2bM/RSPxGLpKjtQ/s1600/Cinderella_iconic.jpg" style="height: 200px; width: 200px" alt="Image Not Found">
           </div>
         
         </div>
       </div>
     </div>
+
 
   </body>
 
